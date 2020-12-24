@@ -26,10 +26,10 @@ PD3(8) (??)<br>
 \> show all containers<br>
 \> show all flows<br>
 \> show all action values<br>
-\> show actions related to <日本語><br>
-\> show flows related to <日本語><br>
-\> show containers related to <日本語><br>
-\> show <ID1> <ID2> <ID3> . . .<br>
+\> show actions related to \<日本語\><br>
+\> show flows related to \<日本語\><br>
+\> show containers related to \<日本語\><br>
+\> show \<ID1\> \<ID2\> \<ID3\> . . .<br>
 \> verify112<br>
 \> verify113<br>
 \> verify1312<br>
