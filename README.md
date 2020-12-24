@@ -5,7 +5,7 @@ Common Lisp programs for PD3
 $ cd<br>
 $ cd common-lisp<br>
 $ ls<br>
-PD3  drawio  line-reader  xmlreader(br>
+PD3  drawio  line-reader  xmlreader<br>
 
 ## SBCLのインストール on ubuntu
 
