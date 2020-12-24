@@ -1,5 +1,6 @@
 # PD3
-Common Lisp programs for PD3
+Common Lisp programs for PD3  
+## DigitalTripletの各ローカルリポジトリを自分のホームディレクトリの直下のcommon-lispディレクトリの下に作成する
 ## SBCLのインストール on ubuntu
 
 $ sudo apt install sbcl
