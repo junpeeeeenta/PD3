@@ -1,6 +1,12 @@
 # PD3
 Common Lisp programs for PD3  
 ## DigitalTripletの各ローカルリポジトリを自分のホームディレクトリの直下のcommon-lispディレクトリの下に作成する
+
+$ cd<br>
+$ cd common-lisp<br>
+$ ls<br>
+PD3  drawio  line-reader  xmlreader(br>
+
 ## SBCLのインストール on ubuntu
 
 $ sudo apt install sbcl
