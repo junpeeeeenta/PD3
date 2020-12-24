@@ -16,7 +16,7 @@
   (format t "show [the] action(s) related to <日本語>~%")
   (format t "show [the] flow(s) related to <日本語>~%")
   (format t "show [the] container(s) related to <日本語>~%")
-  (format t "show all action values")
+  (format t "show all action values~%")
   (format t "verify112~%")
   (format t "verify113~%")
   (format t "verify1312~%")
