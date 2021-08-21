@@ -17,7 +17,7 @@ $ sbcl<br>
 \* (require :sb-aclrepl)<br>
 CL-USER(1) :pwd<br>
 CL-USER(2) :cd<br>
-CL-USER(3) :cd common-lisp/pd3<br>
+CL-USER(3) :cd common-lisp/PD3<br>
 
 ## PD3システムのロードとdrawioファイルの取り込み
 

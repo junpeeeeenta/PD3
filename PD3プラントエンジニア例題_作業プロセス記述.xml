@@ -10,21 +10,21 @@
             <mxPoint x="-320" y="-100" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-5" value="不良の種類を特定する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-5" value="不良の種類を特定する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="-960" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-17" value="稼働データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-17" value="稼働データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-18" value="種類ごとに不良の件数を集計する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-18" value="種類ごとに不良の件数を集計する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-19" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-20" value="件数の多い不良の種類を選択する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-20" value="件数の多い不良の種類を選択する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-21" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-5" vertex="1">
@@ -75,21 +75,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-28" target="NgBI8Hl58PC9vPDNvKBK-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-28" value="発生している現象を調査する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-28" value="発生している現象を調査する" style="swimlane;containertype=specialization;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="480" y="280" width="1400" height="240" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-29" value="発生時の設備を観察する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-29" value="発生時の設備を観察する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
           <mxGeometry x="240" y="120" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-30" value="発生時の状況を分析する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-30" value="発生時の状況を分析する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
           <mxGeometry x="440" y="120" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-31" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
           <mxGeometry x="640" y="120" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-32" value="問題現象を特定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-32" value="問題現象を特定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
           <mxGeometry x="840" y="120" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-33" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-28" vertex="1">
@@ -142,21 +142,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-40" target="NgBI8Hl58PC9vPDNvKBK-13" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-40" value="問題要因を抽出する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-40" value="問題要因を抽出する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="3360" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-41" value="設備の構成情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-41" value="設備の構成情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-42" value="主要な要因を整理する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-42" value="主要な要因を整理する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-43" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-44" value="検証すべき問題要因を決定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-44" value="検証すべき問題要因を決定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-45" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-40" vertex="1">
@@ -207,21 +207,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-52" target="NgBI8Hl58PC9vPDNvKBK-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-52" value="異常の内容を把握する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-52" value="異常の内容を把握する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="1920" y="280" width="1400" height="360" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-53" value="上下ロールの位置データを収集する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-53" value="上下ロールの位置データを収集する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
           <mxGeometry x="240" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-54" value="ワークの外形寸法を算出する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-54" value="ワークの外形寸法を算出する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
           <mxGeometry x="440" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-55" value="異常波形を正常波形と比較する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
           <mxGeometry x="640" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-56" value="不良につながる設備の状態を仮定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-56" value="不良につながる設備の状態を仮定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
           <mxGeometry x="840" y="240" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-57" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-52" vertex="1">
@@ -283,7 +283,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="4OSi72X_oG0EFlQ_Ygog-1" value="モニタリングシステムを導入する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="N3E1j6s_NeO_vXobjEYr-52">
+        <mxCell id="4OSi72X_oG0EFlQ_Ygog-1" value="モニタリングシステムを導入する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="N3E1j6s_NeO_vXobjEYr-52">
           <mxGeometry x="240" y="120" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Sko_O2Cu5uooJF9mRGal-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-64" target="Sko_O2Cu5uooJF9mRGal-5" edge="1">
@@ -294,21 +294,21 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-64" value="リニアセンサー周りの確認項目を調べる" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-64" value="リニアセンサー周りの確認項目を調べる" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="4800" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-65" value="検証に必要な確認項目の情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-65" value="検証に必要な確認項目の情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-66" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-66" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-67" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-68" value="設備の状態が適切かを判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-68" value="設備の状態が適切かを判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-69" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-64" vertex="1">
@@ -359,21 +359,21 @@
         <mxCell id="Sko_O2Cu5uooJF9mRGal-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-76" target="Sko_O2Cu5uooJF9mRGal-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-76" value="リニアセンサー周りの環境を調べる" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-76" value="リニアセンサー周りの環境を調べる" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="4800" y="520" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-77" value="検証に必要な温度データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-77" value="検証に必要な温度データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-78" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-78" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-79" value="メーカーの推奨範囲と比較する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-80" value="設備の状態が適切かを判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-80" value="設備の状態が適切かを判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-81" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-76" vertex="1">
@@ -415,21 +415,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-88" target="NgBI8Hl58PC9vPDNvKBK-33" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-88" value="連結ピンの摩耗の可能性を調べる" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-88" value="連結ピンの摩耗の可能性を調べる" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="7680" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-89" value="連結部を観察する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-89" value="連結部を観察する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-90" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-90" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-91" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-92" value="連結ピンの摩耗の有無を判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-92" value="連結ピンの摩耗の有無を判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-93" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-88" vertex="1">
@@ -480,21 +480,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-100" target="NgBI8Hl58PC9vPDNvKBK-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-100" value="偏心軸の摩耗の可能性を調べる" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-100" value="偏心軸の摩耗の可能性を調べる" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="6240" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-101" value="寸法・偏心量を計測する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-101" value="寸法・偏心量を計測する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-102" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-102" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-103" value="計測値を図面と比較する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-104" value="偏心軸の状態が適切かを判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-104" value="偏心軸の状態が適切かを判断する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-105" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-100" vertex="1">
@@ -550,21 +550,21 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-112" value="設備の復旧方法を考える" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-112" value="設備の復旧方法を考える" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="9120" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-113" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-113" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-114" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-114" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-115" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-116" value="連結部の復旧方法を検討する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-116" value="連結部の復旧方法を検討する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-117" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-112" vertex="1">
@@ -615,21 +615,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-124" target="NgBI8Hl58PC9vPDNvKBK-52" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-124" value="連結ピン・メタルの摩耗状態の管理方法を考える" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-124" value="連結ピン・メタルの摩耗状態の管理方法を考える" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="10560" y="280" width="1400" height="520" as="geometry">
             <mxRectangle x="9600" width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-125" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-125" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-126" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-126" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-127" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-129" value="管理方法の選択肢を調査する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-129" value="管理方法の選択肢を調査する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-130" value="摩耗による連結ピン&lt;br&gt;・メタルの破損" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0.5;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=none;" parent="N3E1j6s_NeO_vXobjEYr-124" source="N3E1j6s_NeO_vXobjEYr-181" target="N3E1j6s_NeO_vXobjEYr-125" edge="1">
@@ -666,10 +666,10 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-181" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="40" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-217" value="管理方法の案を選択する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-217" value="管理方法の案を選択する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="840" y="400" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-216" value="候補を評価する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-216" value="候補を評価する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-124" vertex="1">
           <mxGeometry x="840" y="200" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-219" value="管理方法の候補" style="html=1;verticalAlign=bottom;endArrow=block;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontStyle=4" parent="N3E1j6s_NeO_vXobjEYr-124" source="N3E1j6s_NeO_vXobjEYr-129" target="N3E1j6s_NeO_vXobjEYr-216" edge="1">
@@ -719,7 +719,7 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-136" target="NgBI8Hl58PC9vPDNvKBK-73" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-136" value="不良の低減効果を確認する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-136" value="不良の低減効果を確認する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="14880" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
@@ -727,16 +727,16 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-174" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
           <mxGeometry x="40" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-137" value="稼働データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-137" value="稼働データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-138" value="対策実施前後の不良率を算出する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-138" value="対策実施前後の不良率を算出する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-139" value="実施以前の不良の割合と比較する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-140" value="不良の低減効果を決定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-140" value="不良の低減効果を決定する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-141" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-136" vertex="1">
@@ -784,21 +784,21 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-148" target="NgBI8Hl58PC9vPDNvKBK-65" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-148" value="自動摩耗傾向管理プログラムを導入する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-148" value="自動摩耗傾向管理プログラムを導入する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="13440" y="280" width="1400" height="320" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-149" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-149" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-150" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-150" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-151" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-152" value="適用可能なプログラムを作成する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-152" value="適用可能なプログラムを作成する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-153" value="導入に必要な下準備を行う" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-148" vertex="1">
@@ -869,21 +869,21 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-160" value="実ラインを正常な状態に復帰させる" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-160" value="実ラインを正常な状態に復帰させる" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="12000" y="280" width="1400" height="200" as="geometry">
             <mxRectangle width="90" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-161" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDC;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-161" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECCD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
           <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-162" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECIA;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-162" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECAI;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
           <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-163" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEV;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
           <mxGeometry x="640" y="80" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-164" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECD;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-164" value="" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECDE;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
           <mxGeometry x="840" y="80" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-165" value="部品の交換を実施する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=ECEX;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="N3E1j6s_NeO_vXobjEYr-160" vertex="1">
@@ -1001,7 +1001,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-234" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-226" target="N3E1j6s_NeO_vXobjEYr-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-226" value="稼働データを取得する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-226" value="稼働データを取得する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-960" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-228" value="2017/10-2018/3の稼働データをダウンロードする" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-226" vertex="1">
@@ -1019,7 +1019,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-241" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-235" target="N3E1j6s_NeO_vXobjEYr-18" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-235" value="種類ごとに不良の件数を集計する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-235" value="種類ごとに不良の件数を集計する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="-760" y="780" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-236" value="不良の内訳を整理する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-235" vertex="1">
@@ -1037,7 +1037,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-242" target="aY-XwLtE1HOk4Dixvr3X-39" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-242" value="発生時の設備の情報を取得する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-242" value="発生時の設備の情報を取得する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="480" y="880" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-243" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-242" vertex="1">
@@ -1064,7 +1064,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-274" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-249" target="N3E1j6s_NeO_vXobjEYr-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-249" value="上下ロールの位置データを収集する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-249" value="上下ロールの位置データを収集する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1920" y="720" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-250" value="モニタリングシステムから位置データをダウンロードする" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-249" vertex="1">
@@ -1082,7 +1082,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-275" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-255" target="N3E1j6s_NeO_vXobjEYr-54" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-255" value="ワークの外形寸法を算出する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-255" value="ワークの外形寸法を算出する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2120" y="940" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-256" value="外形寸法の推移をグラフに整理する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-255" vertex="1">
@@ -1091,7 +1091,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-276" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-261" target="N3E1j6s_NeO_vXobjEYr-55" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-261" value="異常波形を正常波形と比較する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-261" value="異常波形を正常波形と比較する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2320" y="1160" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-262" value="異常時の波形を目標寸法に重ね合わせる" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-261" vertex="1">
@@ -1115,7 +1115,7 @@
             <mxPoint x="2160" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-267" value="モニタリングシステムを導入する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-267" value="モニタリングシステムを導入する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="1500" y="940" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-268" value="モニタリングシステムを構築する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-267" vertex="1">
@@ -1142,7 +1142,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-289" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-277" target="N3E1j6s_NeO_vXobjEYr-41" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-277" value="設備の構成情報を取得する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-277" value="設備の構成情報を取得する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="3360" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-278" value="下ロール周りの図面を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-277" vertex="1">
@@ -1169,7 +1169,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-290" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-283" target="N3E1j6s_NeO_vXobjEYr-278" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-283" value="下ロール周りの図面を取得する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-283" value="下ロール周りの図面を取得する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="3360" y="840" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-284" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-283" vertex="1">
@@ -1196,7 +1196,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-297" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-291" target="N3E1j6s_NeO_vXobjEYr-103" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-291" value="計測値を図面と比較する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-291" value="計測値を図面と比較する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="6860" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-292" value="ソフトウェア上で計測値を確認する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-291" vertex="1">
@@ -1214,7 +1214,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-298" target="aY-XwLtE1HOk4Dixvr3X-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-298" value="点検項目の情報を取得する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-298" value="点検項目の情報を取得する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="5000" y="1080" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-299" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-298" vertex="1">
@@ -1241,7 +1241,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-311" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-305" target="aY-XwLtE1HOk4Dixvr3X-18" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-305" value="寸法・偏心量の情報を取得する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-305" value="寸法・偏心量の情報を取得する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="6240" y="840" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-306" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-305" vertex="1">
@@ -1268,7 +1268,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-312" target="aY-XwLtE1HOk4Dixvr3X-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-312" value="周辺の温度データを取得する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-312" value="周辺の温度データを取得する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="5040" y="1300" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-313" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-312" vertex="1">
@@ -1295,7 +1295,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-325" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-319" target="aY-XwLtE1HOk4Dixvr3X-24" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-319" value="連結部の情報を取得する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-319" value="連結部の情報を取得する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="7680" y="840" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-320" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-319" vertex="1">
@@ -1322,7 +1322,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-332" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-326" target="aY-XwLtE1HOk4Dixvr3X-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-326" value="部品の交換を実施する" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-326" value="部品の交換を実施する" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="12800" y="840" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-327" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-326" vertex="1">
@@ -1349,7 +1349,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-358" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-333" target="N3E1j6s_NeO_vXobjEYr-138" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-333" value="対策実施前後の不良率を算出する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-333" value="対策実施前後の不良率を算出する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="15080" y="780" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-334" value="不良率の推移をグラフに整理する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-333" vertex="1">
@@ -1367,7 +1367,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-371" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=phys;pd3type=arrow;fillColor=#d5e8d4;strokeColor=#82b366;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-339" target="N3E1j6s_NeO_vXobjEYr-366" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-339" value="センサーの値をシーケンサーで読み込めるようにする" style="swimlane;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-339" value="センサーの値をシーケンサーで読み込めるようにする" style="swimlane;containertype=specialization;pd3layer=phys;pd3type=container;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="13800" y="1180" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-340" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=phys;pd3type=action;pd3action=end;fillColor=#d5e8d4;strokeColor=#82b366;dashed=1;" parent="N3E1j6s_NeO_vXobjEYr-339" vertex="1">
@@ -1394,7 +1394,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-374" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-345" target="N3E1j6s_NeO_vXobjEYr-152" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-345" value="適用可能なプログラムを作成する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-345" value="適用可能なプログラムを作成する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="14040" y="680" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-346" value="自動摩耗傾向管理プログラムを記述する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-345" vertex="1">
@@ -1421,7 +1421,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-357" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-351" target="N3E1j6s_NeO_vXobjEYr-137" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-351" value="稼働データを取得する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-351" value="稼働データを取得する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="14880" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-352" value="対策実施前後の稼働データをダウンロードする" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-351" vertex="1">
@@ -1439,7 +1439,7 @@
         <mxCell id="N3E1j6s_NeO_vXobjEYr-372" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="N3E1j6s_NeO_vXobjEYr-359" target="N3E1j6s_NeO_vXobjEYr-214" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-359" value="プログラムを実行する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-359" value="プログラムを実行する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="14440" y="1120" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-360" value="ソフトウェアを変更する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-359" vertex="1">
@@ -1471,7 +1471,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="N3E1j6s_NeO_vXobjEYr-365" value="導入に必要な下準備を行う" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="N3E1j6s_NeO_vXobjEYr-365" value="導入に必要な下準備を行う" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="14120" y="900" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="N3E1j6s_NeO_vXobjEYr-366" value="センサーの値をシーケンサーで読み込めるようにする" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="N3E1j6s_NeO_vXobjEYr-365" vertex="1">
@@ -1531,7 +1531,7 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-81" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aN4fBr3pT2xVs8cnu0bA-1" target="aN4fBr3pT2xVs8cnu0bA-18" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-1" value="事象を調査する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-1" value="事象を調査する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="-960" y="-280" width="2840" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-1" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-1" vertex="1">
@@ -1567,7 +1567,7 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aN4fBr3pT2xVs8cnu0bA-2" target="NgBI8Hl58PC9vPDNvKBK-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-2" value="考えられる原因を抽出する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-2" value="考えられる原因を抽出する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="1920" y="-280" width="2840" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-9" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-2" vertex="1">
@@ -1606,7 +1606,7 @@
             <mxPoint x="5916.7998046875" y="-350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-3" value="原因の有無を確認する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-3" value="原因の有無を確認する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="4800" y="-280" width="4280" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-29" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-3" vertex="1">
@@ -1670,7 +1670,7 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aN4fBr3pT2xVs8cnu0bA-4" target="NgBI8Hl58PC9vPDNvKBK-47" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-4" value="不具合の対策を立てる" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-4" value="不具合の対策を立てる" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="9120" y="-280" width="2840" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-50" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-4" vertex="1">
@@ -1714,7 +1714,7 @@
             <mxPoint x="12850" y="-330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-5" value="対策を実施する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-5" value="対策を実施する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="12000" y="-280" width="2840" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-61" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-5" vertex="1">
@@ -1761,7 +1761,7 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aN4fBr3pT2xVs8cnu0bA-6" target="aN4fBr3pT2xVs8cnu0bA-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-6" value="要因を分析する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-6" value="要因を分析する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="1920" y="-560" width="2840" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-18" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-6" vertex="1">
@@ -1789,7 +1789,7 @@
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aN4fBr3pT2xVs8cnu0bA-7" target="aN4fBr3pT2xVs8cnu0bA-22" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-7" value="要因を検証する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-7" value="要因を検証する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="4800" y="-560" width="4280" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-24" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-7" vertex="1">
@@ -1819,7 +1819,7 @@
             <mxPoint x="9400" y="-620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-8" value="解決策を検討する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-8" value="解決策を検討する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="9120" y="-560" width="2840" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-45" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-8" vertex="1">
@@ -1849,7 +1849,7 @@
             <mxPoint x="12340" y="-620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-9" value="解決策を実施する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-9" value="解決策を実施する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="12000" y="-560" width="4280" height="200" as="geometry" />
         </mxCell>
         <mxCell id="NgBI8Hl58PC9vPDNvKBK-69" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-9" vertex="1">
@@ -1887,7 +1887,7 @@
             <mxPoint x="220" y="-910" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aN4fBr3pT2xVs8cnu0bA-10" value="問題を解決する" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="aN4fBr3pT2xVs8cnu0bA-10" value="問題を解決する" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="-960" y="-840" width="17240" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aN4fBr3pT2xVs8cnu0bA-16" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="aN4fBr3pT2xVs8cnu0bA-10" vertex="1">
@@ -1971,7 +1971,7 @@
         <mxCell id="Sko_O2Cu5uooJF9mRGal-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=topic;pd3type=arrow;fillColor=#ffe6cc;strokeColor=#d79b00;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Sko_O2Cu5uooJF9mRGal-1" target="NgBI8Hl58PC9vPDNvKBK-31" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Sko_O2Cu5uooJF9mRGal-1" value="Container" style="swimlane;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+        <mxCell id="Sko_O2Cu5uooJF9mRGal-1" value="Container" style="swimlane;containertype=specialization;pd3layer=topic;pd3type=container;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="4800" width="1400" height="200" as="geometry" />
         </mxCell>
         <mxCell id="Sko_O2Cu5uooJF9mRGal-3" value="[Start]" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=topic;pd3type=action;pd3action=start;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" parent="Sko_O2Cu5uooJF9mRGal-1" vertex="1">
@@ -2045,7 +2045,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aY-XwLtE1HOk4Dixvr3X-1" target="N3E1j6s_NeO_vXobjEYr-65" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aY-XwLtE1HOk4Dixvr3X-1" value="検証に必要な確認項目の情報を取得する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="aY-XwLtE1HOk4Dixvr3X-1" value="検証に必要な確認項目の情報を取得する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="4800" y="800" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-2" value="点検項目の情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="aY-XwLtE1HOk4Dixvr3X-1" vertex="1">
@@ -2077,7 +2077,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aY-XwLtE1HOk4Dixvr3X-7" value="検証に必要な温度データを取得する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="aY-XwLtE1HOk4Dixvr3X-7" value="検証に必要な温度データを取得する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="4380" y="1020" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-8" value="周辺の温度データを取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="aY-XwLtE1HOk4Dixvr3X-7" vertex="1">
@@ -2104,7 +2104,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aY-XwLtE1HOk4Dixvr3X-17" target="N3E1j6s_NeO_vXobjEYr-101" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aY-XwLtE1HOk4Dixvr3X-17" value="寸法・偏心量を計測する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="aY-XwLtE1HOk4Dixvr3X-17" value="寸法・偏心量を計測する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="6240" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-18" value="寸法・偏心量の情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="aY-XwLtE1HOk4Dixvr3X-17" vertex="1">
@@ -2122,7 +2122,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aY-XwLtE1HOk4Dixvr3X-23" target="N3E1j6s_NeO_vXobjEYr-89" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aY-XwLtE1HOk4Dixvr3X-23" value="連結部を観察する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="aY-XwLtE1HOk4Dixvr3X-23" value="連結部を観察する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="7680" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-24" value="連結部の情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="aY-XwLtE1HOk4Dixvr3X-23" vertex="1">
@@ -2155,7 +2155,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aY-XwLtE1HOk4Dixvr3X-31" target="N3E1j6s_NeO_vXobjEYr-165" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aY-XwLtE1HOk4Dixvr3X-31" value="部品の交換を実施する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="aY-XwLtE1HOk4Dixvr3X-31" value="部品の交換を実施する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="12800" y="560" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-32" value="部品の交換を実施する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="aY-XwLtE1HOk4Dixvr3X-31" vertex="1">
@@ -2182,7 +2182,7 @@
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;pd3layer=info;pd3type=arrow;fillColor=#dae8fc;strokeColor=#6c8ebf;entryX=0;entryY=1;entryDx=0;entryDy=0;" parent="1" source="aY-XwLtE1HOk4Dixvr3X-38" target="N3E1j6s_NeO_vXobjEYr-29" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="aY-XwLtE1HOk4Dixvr3X-38" value="発生時の設備を観察する" style="swimlane;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="aY-XwLtE1HOk4Dixvr3X-38" value="発生時の設備を観察する" style="swimlane;containertype=specialization;pd3layer=info;pd3type=container;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="480" y="600" width="600" height="200" as="geometry" />
         </mxCell>
         <mxCell id="aY-XwLtE1HOk4Dixvr3X-39" value="発生時の設備の情報を取得する" style="rounded=0;whiteSpace=wrap;html=1;pd3layer=info;pd3type=action;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="aY-XwLtE1HOk4Dixvr3X-38" vertex="1">

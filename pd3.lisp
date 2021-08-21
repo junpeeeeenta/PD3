@@ -180,6 +180,7 @@
    (mechanisms :accessor action-mechanisms :initarg :mechanisms  :initform nil)
    (parent :accessor action-parent :initarg :parent :initform nil)
    (child :accessor action-child :initarg :child :initform nil)
+   (actionType :accessor action-type :initarg :actionType :initform nil)
    )
   )
 
@@ -202,6 +203,7 @@
    (value :accessor container-value :initarg :value :initform nil)
    (parent :accessor container-parent :initarg :parent :initform nil)
    (child :accessor container-child :initarg :child :initform nil)
+   (containerType :accessor container-type :initarg :containerType :initform nil)
    )
   )
 
@@ -242,7 +244,26 @@
 
 (defun find-child-for-container (source-id)
   (remove-if-not #'(lambda (id) (string= source-id (action-parent (symbol-value id))))
-                                *actions*))
+		 *actions*))
+
+(defun set-action-type (style-value)
+  (cond ((string= style-value '"ECDP") '"difine problem")
+	((string= style-value '"ECCD") '"collect data")
+	((string= style-value '"ECAI") '"analyze information")
+	((string= style-value '"ECEV") '"evaluate")
+	((string= style-value '"ECLS") '"list-up solutions")
+	((string= style-value '"ECDE") '"decide")
+	((string= style-value '"ECEX") '"execute")
+	(t nil)))
+
+(defun set-container-type (mxCell)
+  (if (style-prop-exists? mxCell "containertype")
+    (let ((style-value (second (style-prop-exists? mxCell "containertype"))))
+	 (apply #'(lambda (value)
+	      (cond ((string= value '"specialization") '"specialization")
+	       ((string= value '"whilebox") '"while box")
+	       ((string= value '"whilecontainer") '"while container")))
+		style-value nil))))
 
 (defun make-flow-from-mxCell (mxCell)
   (when (or (style-prop-exists? mxCell "endArrow")
@@ -279,11 +300,14 @@
                                 ((or (null exitX) (null exitY)) 'output)
                                 (t nil))
               :targetType (cond ((string= entryX "0") 'input)
-                                ((string= entryY "0") 'control)
+                                ((string= entryY "0") 'intention)
+				((and (string= entryX "1") (string= entryY "0")) 'rationale)
+				((and (string= entryX "1") (string= entryY "0.5")) 'annotation)
                                 ((and (string= entryY "1") (style-prop-exists? mxCell "edgeStyle"))
                                  'parent)
                                 ((and (string= entryY "1") (style-prop-exists? mxCell "endArrow"))
-                                 'mechanism)
+                                 'tool/knowledge
+				 )
                                 ((and (or (null entryX) (null entryY)) (style-prop-exists? mxCell "edgeStyle"))
                                  'parent)
                                 ((and (or (null entryX) (null entryY)) (style-prop-exists? mxCell "endArrow"))
@@ -320,8 +344,10 @@
     (let ((id (dio:mxCell-id mxCell))
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
+	  (type (set-action-type (second (style-prop-exists? mxCell "pd3action"))))
           (value (dio:mxCell-value mxCell))
           (parent (dio:mxCell-parent mxCell)))
+      
       (let ((inputs (find-inputs id))
             (outputs (or (find-outputs id) (mklist (search-output-by-point (dio:mxCell-geometry mxCell)))))
             (controls (find-controls id))
@@ -333,7 +359,7 @@
 ;;;          id layer value inputs outputs controls mechanisms)
         (setq this-action
               (make-instance 'action :id id :layer layer :value value :inputs inputs :outputs outputs
-                :controls controls :mechanisms mechanisms :parent parent :child child))
+                :controls controls :mechanisms mechanisms :parent parent :child child :actionType type))
         (setq id-sym (ensure-external (intern (action-id this-action) :pd3) :pd3))
         (pushnew id-sym *actions*)
         (set id-sym this-action)
@@ -350,7 +376,8 @@
     (let ((id (drawio:mxCell-id mxCell))
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
-          (value (drawio:mxCell-value mxCell)))
+          (value (drawio:mxCell-value mxCell))
+	  (containerType (set-container-type mxCell)))
       (let ((parent (find-parent id))
             (child (find-child-for-container id))
             (id-sym nil))
@@ -358,7 +385,7 @@
 ;;;          id layer value parent child)
         (let ((this-container
                (make-instance 'container :id id :layer layer :value value 
-                 :parent parent :child child)))
+                 :parent parent :child child :containerType containerType)))
           (setq id-sym (ensure-external (intern (container-id this-container) :pd3) :pd3))
           (pushnew id-sym *containers*)
           (set id-sym this-container)
@@ -388,7 +415,7 @@
                        if (make-action-from-mxCell mxCell)
                        collect it)))
       (declare (ignore these-actions))
-      (format t "~%The number of actios is ~S." (length *actions*))
+      (format t "~%The number of actions is ~S." (length *actions*))
       (format t "~%Do you want to show them?")
       (when (y-or-n-p ) (loop for anaction in *actions* do (describe (symbol-value anaction))))
       (let ((these-containers (loop for mxCell in mxcells-nonflows
@@ -403,7 +430,9 @@
         ))))
   
 #|
-:cd /home/seiji/common-lisp/pd3/
+:cd /home/jumpei/common-lisp/pd3/
+:ld pd3.asd
+(asdf:load-system :pd3)
 (in-package :pd3)
 (read-drawio-file "PD3プラントエンジニア例題_作業プロセス記述.xml")
 |#
