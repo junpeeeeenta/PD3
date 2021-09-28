@@ -3,6 +3,10 @@
 (defun null-string-p (s)
   (or (null s) (zerop (length s))))
 
+(defparameter *keywords&stopwords* '(:the :a :some :all :every :action :actions :flow :flows :container :containers
+                                     :parent :parents :child :childs :children :relevant :related :to 
+                                     :diagram :value :values :edgeLabel :edgeLabels :memory :exit :quit :stop))
+
 (defun ?? ()
   (format t "You are in interactive mode for PD3.~%")
   (format t "You can invoke PD3 commands without parens such as Linax/Unix commands.~%")
@@ -27,13 +31,10 @@
     (print '>)(force-output)
     (let ((line (read-line *standard-input*)))
       (setq line (string-trim '(#\Space #\Tab #\. #\．) line))
-      (let ((form nil)
-            (obj nil)
-            (pos 0))
+      (let ((form (drawio:split-string line)))
         (setq form
-              (loop do (multiple-value-setq (obj pos) (read-from-string line nil nil :start pos))
-                  while obj
-                  collect obj))
+              (cons (intern (string-upcase (car form)) :pd3)
+                    (mapcar #'(lambda (str) (intern (string-upcase str) :keyword)) (cdr form))))
         (when (member (car form) '(exit quit stop)) (return-from ??))
         (print form)
         (print (eval (cons (car form) (mapcar #'(lambda (x) (list 'quote x)) (cdr form)))))

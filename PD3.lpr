@@ -1,17 +1,15 @@
-;; -*- lisp-version: "10.1 [64-bit Linux (x86-64)] (Nov 12, 2020 16:47)"; -*-
+;; -*- lisp-version: "10.1 [64-bit Linux (x86-64)] (Aug 11, 2021 9:14)"; -*-
 
 (in-package :cg-user)
 
 (define-project :name :PD3
-  :modules (list (make-instance 'module :name "PD3.lisp")
-                 (make-instance 'module :name "PD3inter.lisp"))
+  :modules (list (make-instance 'module :name "pd3.lisp")
+                 (make-instance 'module :name "pd3inter.lisp"))
   :projects (list (make-instance 'project-module :name "../drawio/drawio" :show-modules
-                                 t))
+                                 nil))
   :libraries nil
   :editable-files nil
-  :distributed-files (list "PD3例題標準プロセスモデル_プラントエンジニア_説明用.xml" "PD3例題-2020_10_01.xml"
-                           "container-seijitest20200915c.xml"
-                           "container-seijitest20200915c-hk.xml")
+  :distributed-files nil
   :internally-loaded-files nil
   :project-package-name :common-graphics-user
   :main-form nil

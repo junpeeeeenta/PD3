@@ -9,6 +9,9 @@
            #:flow-sorceType #:flow-targetType 
            #:action #:container #:style-prop-exists?
            #:show #:it
+           #:read-drawio-file
+           #:ensure-external
+	   
    ))
 
 (in-package :pd3)
@@ -59,26 +62,26 @@
 (defvar it nil "pronoun for anaphora")
 
 (defun show (&rest args)
-  (setq args (remove 'the args))
+  (setq args (remove :the args))
   (case (car args)
-    (all (ecase (second args)
-           ((action actions) (if (equal (third args) 'values)
+    (:all (ecase (second args)
+           ((:action :actions) (if (equal (third args) :values)
                                  (pprint (mapcar #'(lambda (action) (action-value (symbol-value action))) *actions*))
                                (%show *actions*)))
-           ((flow flows) (%show *flows*))
-           ((container containers) (%show *containers*))))
-    ((a some) (ecase (second args)
-                ((action actions)(%show (first *actions*)))
-                ((flow flows) (%show (first *flows*)))
-                ((container containers)(%show (first *containers*)))))
-    ((action actions)
-     (let ((keyword (car (remove 'to (remove 'related (cdr args))))))
+           ((:flow :flows) (%show *flows*))
+           ((:container :containers) (%show *containers*))))
+    ((:a :some) (ecase (second args)
+                ((:action :actions) (%show (first *actions*)))
+                ((:flow :flows) (%show (first *flows*)))
+                ((:container :containers)(%show (first *containers*)))))
+    ((:action :actions)
+     (let ((keyword (car (remove :to (remove :related (cdr args))))))
        (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *actions*))))
-    ((flow flows)
-     (let ((keyword (car (remove 'to (remove 'related (cdr args))))))
+    ((:flow :flows)
+     (let ((keyword (car (remove :to (remove :related (cdr args))))))
        (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *flows*))))
-    ((container containers)
-     (let ((keyword (car (remove 'to (remove 'related (cdr args))))))
+    ((:container :containers)
+     (let ((keyword (car (remove :to (remove :related (cdr args))))))
        (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *containers*))))
     (otherwise (mapcar #'%show args)))
   (values))
@@ -408,25 +411,26 @@
                     collect it))
          )
     (declare (ignore these-flows))
-    (format t "~%The number of flows is ~S." (length *flows*))
-    (format t "~%Do you want to show them?")
-    (when (y-or-n-p ) (loop for aflow in *flows* do (describe (symbol-value aflow))))
+    ;; (format t "~%The number of flows is ~S." (length *flows*))
+    ;; (format t "~%Do you want to show them?")
+    ;; (when (y-or-n-p ) (loop for aflow in *flows* do (describe (symbol-value aflow))))
     (let ((these-actions (loop for mxCell in mxcells-nonflows
                        if (make-action-from-mxCell mxCell)
                        collect it)))
       (declare (ignore these-actions))
-      (format t "~%The number of actions is ~S." (length *actions*))
-      (format t "~%Do you want to show them?")
-      (when (y-or-n-p ) (loop for anaction in *actions* do (describe (symbol-value anaction))))
+      ;; (format t "~%The number of actions is ~S." (length *actions*))
+      ;; (format t "~%Do you want to show them?")
+      ;; (when (y-or-n-p ) (loop for anaction in *actions* do (describe (symbol-value anaction))))
       (let ((these-containers (loop for mxCell in mxcells-nonflows
                             if (make-container-from-mxCell mxCell)
                             collect it)))
         (declare (ignore these-containers))
-        (format t "~%The number of containers is ~S." (length *containers*))
-        (format t "~%Do you want to show them?")
-        (when (y-or-n-p ) (loop for acontainer in *containers* do (describe (symbol-value acontainer))))
-        (format t "~%Type '(??)', if you want help.")
-        :done!
+        ;; (format t "~%The number of containers is ~S." (length *containers*))
+        ;; (format t "~%Do you want to show them?")
+        ;; (when (y-or-n-p ) (loop for acontainer in *containers* do (describe (symbol-value acontainer))))
+        ;; (format t "~%Type '(??)', if you want help.")
+       
+
         ))))
   
 #|
