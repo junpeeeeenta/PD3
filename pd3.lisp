@@ -11,7 +11,6 @@
            #:show #:it
            #:read-drawio-file
            #:ensure-external
-	   
    ))
 
 (in-package :pd3)
@@ -162,16 +161,16 @@
   (let ((spoint (find-if #'(lambda (p) (string= "sourcePoint" (dio:mxPoint-as p)))
                          (dio:mxGeometry-points (dio:mxCell-geometry mxCell)))))
     (etypecase spoint
-      (dio:mxGeometry (cons (dio:mxGeometry-x spoint) (dio:mxGeometry-y spoint)))
-      (dio:mxPoint    (cons (dio:mxPoint-x spoint) (dio:mxPoint-y spoint))))))
+      (dio:mxGeometry (cons (dio:mxGeometry-x spoint) (cons (dio:mxGeometry-y spoint) nil)))
+      (dio:mxPoint    (cons (dio:mxPoint-x spoint) (cons (dio:mxPoint-y spoint) nil))))))
 
 (defun retlieve-targetpoint (mxCell)
   (assert (drawio-flow? mxCell))
   (let ((tpoint (find-if #'(lambda (p) (string= "targetPoint" (dio:mxPoint-as p)))
                          (dio:mxGeometry-points (dio:mxCell-geometry mxCell)))))
     (etypecase tpoint
-      (dio:mxGeometry (cons (dio:mxGeometry-x tpoint) (dio:mxGeometry-y tpoint)))
-      (dio:mxPoint    (cons (dio:mxPoint-x tpoint) (dio:mxPoint-y tpoint))))))
+      (dio:mxGeometry (cons (dio:mxGeometry-x tpoint) (cons (dio:mxGeometry-y tpoint) nil)))
+      (dio:mxPoint    (cons (dio:mxPoint-x tpoint) (cons (dio:mxPoint-y tpoint) nil))))))
 
 (defclass pd3:action ()
   ((id :accessor action-id :initarg :id :initform nil)
@@ -285,7 +284,7 @@
                            (find-if #'(lambda (str) (drawio:starts-with-subseq "entryY" str))
                                     (drawio:split-string (drawio:mxCell-style mxCell) :item #\;))
                            :item #\=)))
-          (exitX (second (drawio:split-string
+          (exitX (second (drawio:split-string 
                           (find-if #'(lambda (str) (drawio:starts-with-subseq "exitX" str))
                                    (drawio:split-string (drawio:mxCell-style mxCell) :item #\;))
                           :item #\=)))
@@ -384,8 +383,6 @@
       (let ((parent (find-parent id))
             (child (find-child-for-container id))
             (id-sym nil))
-;;;        (format t "~%:id ~S :layer ~S :value ~S :parent ~S :child ~S"
-;;;          id layer value parent child)
         (let ((this-container
                (make-instance 'container :id id :layer layer :value value 
                  :parent parent :child child :containerType containerType)))
@@ -394,10 +391,6 @@
           (set id-sym this-container)
           (setf (container-id this-container) id-sym)
           id-sym)))))
-
-;;;
-;;;
-;;;
 
 (defun read-drawio-file (file)
   (let* ((xml
@@ -408,35 +401,15 @@
          (mxcells-nonflows (remove-if #'drawio-flow? mxCells))
          (these-flows (loop for mxCell in mxCells
                     if (make-flow-from-mxCell mxCell)
-                    collect it))
-         )
+                    collect it)))
     (declare (ignore these-flows))
-    ;; (format t "~%The number of flows is ~S." (length *flows*))
-    ;; (format t "~%Do you want to show them?")
-    ;; (when (y-or-n-p ) (loop for aflow in *flows* do (describe (symbol-value aflow))))
     (let ((these-actions (loop for mxCell in mxcells-nonflows
                        if (make-action-from-mxCell mxCell)
                        collect it)))
       (declare (ignore these-actions))
-      ;; (format t "~%The number of actions is ~S." (length *actions*))
-      ;; (format t "~%Do you want to show them?")
-      ;; (when (y-or-n-p ) (loop for anaction in *actions* do (describe (symbol-value anaction))))
       (let ((these-containers (loop for mxCell in mxcells-nonflows
                             if (make-container-from-mxCell mxCell)
                             collect it)))
-        (declare (ignore these-containers))
-        ;; (format t "~%The number of containers is ~S." (length *containers*))
-        ;; (format t "~%Do you want to show them?")
-        ;; (when (y-or-n-p ) (loop for acontainer in *containers* do (describe (symbol-value acontainer))))
-        ;; (format t "~%Type '(??)', if you want help.")
-       
+        (declare (ignore these-containers)))))
+  (format t "~A~%" "COMPLETE!"))
 
-        ))))
-  
-#|
-:cd /home/jumpei/common-lisp/pd3/
-:ld pd3.asd
-(asdf:load-system :pd3)
-(in-package :pd3)
-(read-drawio-file "PD3プラントエンジニア例題_作業プロセス記述.xml")
-|#
