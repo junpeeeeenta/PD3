@@ -250,11 +250,9 @@
 
 (defun set-action-type (style-value)
   (cond ((string= style-value '"ECDP") '"difine problem")
-	((string= style-value '"ECCD") '"collect data")
-	((string= style-value '"ECAI") '"analyze information")
-	((string= style-value '"ECEV") '"evaluate")
-	((string= style-value '"ECLS") '"list-up solutions")
-	((string= style-value '"ECDE") '"decide")
+  ((string= style-value '"ECCAI") '"collect/analyze information")
+	((string= style-value '"ECESI") '"evaluate/select information")
+	((string= style-value '"ECGH") '"generate hypothesis")
 	((string= style-value '"ECEX") '"execute")
 	(t nil)))
 
