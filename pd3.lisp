@@ -246,7 +246,7 @@
 	((string= style-value '"ECEX") '"EXECUTE")
   ((string= style-value '"start") '"START")
   ((string= style-value '"end") '"END")
-	(t nil)))
+
 
 (defun find-container-type (mxCell)
   (if (style-prop-exists? mxCell "containertype")
