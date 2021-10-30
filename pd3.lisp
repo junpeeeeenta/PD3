@@ -5,8 +5,8 @@
   (:use :common-lisp)
   (:shadow #:some)
   (:export #:thing 
-           #:flow #:flow-id #:flow-layer #:flow-value #:flow-source #:flow-target
-           #:flow-sorceType #:flow-targetType 
+           #:arc #:arc-id #:arc-layer #:arc-value #:arc-source #:arc-target
+           #:arc-sorceType #:arc-targetType 
            #:action #:container #:style-prop-exists?
            #:show #:it
            #:read-drawio-file
@@ -50,7 +50,7 @@
 ;;;
 ;;;
 
-(defvar *flows* nil)
+(defvar *arcs* nil)
 (defvar *actions* nil)
 (defvar *containers* nil)
 
@@ -67,18 +67,18 @@
            ((:action :actions) (if (equal (third args) :values)
                                  (pprint (mapcar #'(lambda (action) (action-value (symbol-value action))) *actions*))
                                (%show *actions*)))
-           ((:flow :flows) (%show *flows*))
+           ((:arc :arcs) (%show *arcs*))
            ((:container :containers) (%show *containers*))))
     ((:a :some) (ecase (second args)
                 ((:action :actions) (%show (first *actions*)))
-                ((:flow :flows) (%show (first *flows*)))
+                ((:arc :arcs) (%show (first *arcs*)))
                 ((:container :containers)(%show (first *containers*)))))
     ((:action :actions)
      (let ((keyword (car (remove :to (remove :related (cdr args))))))
        (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *actions*))))
-    ((:flow :flows)
+    ((:arc :arcs)
      (let ((keyword (car (remove :to (remove :related (cdr args))))))
-       (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *flows*))))
+       (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *arcs*))))
     ((:container :containers)
      (let ((keyword (car (remove :to (remove :related (cdr args))))))
        (mapc #'(lambda (x) (describe (symbol-value x))) (find-by keyword *containers*))))
@@ -100,7 +100,7 @@
   (let ((first-char (char keyword 0))
         (value (etypecase (symbol-value x)
                    (action (action-value (symbol-value x)))
-                   (flow (flow-value (symbol-value x)))
+                   (arc (arc-value (symbol-value x)))
                    (container (container-value (symbol-value x))))))
     (let ((pos (position first-char value)))
       (when (and pos (match keyword value pos))
@@ -124,7 +124,6 @@
     `(let ((,found
              (find-if #'(lambda (str) (drawio:starts-with-subseq ,(string propstr) str))
                       (drawio:split-string (drawio:mxCell-style ,mxCell) :item #\;))))
-;;;       (print ,found)
        (if ,found
            (values (drawio:split-string ,found :item #\=)
                    t)
@@ -148,8 +147,8 @@
   "returns true if <mxCell> in drawio/xml is an action."
   (style-prop=? "action" mxCell "pd3type"))
 
-(defun drawio-flow? (mxCell)
-  "returns true if <mxCell> in drawio/xml is a flow."
+(defun drawio-arc? (mxCell)
+  "returns true if <mxCell> in drawio/xml is a arc."
   (style-prop=? "arrow" mxCell "pd3type"))
 
 ;;;
@@ -157,7 +156,7 @@
 ;;;
 
 (defun retlieve-sourcepoint (mxCell)
-  (assert (drawio-flow? mxCell))
+  (assert (drawio-arc? mxCell))
   (let ((spoint (find-if #'(lambda (p) (string= "sourcePoint" (dio:mxPoint-as p)))
                          (dio:mxGeometry-points (dio:mxCell-geometry mxCell)))))
     (etypecase spoint
@@ -165,7 +164,7 @@
       (dio:mxPoint    (cons (dio:mxPoint-x spoint) (cons (dio:mxPoint-y spoint) nil))))))
 
 (defun retlieve-targetpoint (mxCell)
-  (assert (drawio-flow? mxCell))
+  (assert (drawio-arc? mxCell))
   (let ((tpoint (find-if #'(lambda (p) (string= "targetPoint" (dio:mxPoint-as p)))
                          (dio:mxGeometry-points (dio:mxCell-geometry mxCell)))))
     (etypecase tpoint
@@ -176,26 +175,21 @@
   ((id :accessor action-id :initarg :id :initform nil)
    (layer :accessor action-layer :initarg :layer :initform nil)
    (value :accessor action-value :initarg :value :initform nil)
-   (inputs :accessor action-inputs :initarg :inputs :initform nil)
-   (outputs :accessor action-outputs :initarg :outputs :initform nil)
-   (controls :accessor action-controls :initarg :controls :initform nil)
-   (mechanisms :accessor action-mechanisms :initarg :mechanisms  :initform nil)
-   (parent :accessor action-parent :initarg :parent :initform nil)
-   (child :accessor action-child :initarg :child :initform nil)
+   (input :accessor action-input :initarg :input :initform nil)
+   (output :accessor action-output :initarg :output :initform nil)
+   (attribution :accessor action-attribution :initarg :attribution :initform nil)
+   (expansion :accessor action-expansion :initarg :expansion :initform nil)
    (actionType :accessor action-type :initarg :actionType :initform nil)
    )
   )
 
-(defclass pd3:flow ()
-  ((id :accessor flow-id :initarg :id :initform nil)
-   (layer :accessor flow-layer :initarg :layer :initform nil)
-   (value :accessor flow-value :initarg :value :initform nil)
-   (source :accessor flow-source :initarg :source :initform nil)
-   (target :accessor flow-target :initarg :target :initform nil)
-   (sourceType :accessor flow-sourceType :initarg :sourceType :initform nil)
-   (targetType :accessor flow-targetType :initarg :targetType :initform nil)
-   (sourcepoint :accessor flow-sourcepoint :initform nil)
-   (targetpoint :accessor flow-targetpoint :initform nil)
+(defclass pd3:arc ()
+  ((id :accessor arc-id :initarg :id :initform nil)
+   (layer :accessor arc-layer :initarg :layer :initform nil)
+   (value :accessor arc-value :initarg :value :initform nil)
+   (source :accessor arc-source :initarg :source :initform nil)
+   (target :accessor arc-target :initarg :target :initform nil)
+   (arcType :accessor arc-Type :initarg :arcType :initform nil)
    )
   )
 
@@ -203,8 +197,9 @@
   ((id :accessor container-id :initarg :id :initform nil)
    (layer :accessor container-layer :initarg :layer :initform nil)
    (value :accessor container-value :initarg :value :initform nil)
-   (parent :accessor container-parent :initarg :parent :initform nil)
-   (child :accessor container-child :initarg :child :initform nil)
+   (output :accessor action-output :initarg :output :initform nil)
+   (contraction :accessor container-contraction :initarg :contraction :initform nil)
+   (member :accessor container-member :initarg :member :initform nil)
    (containerType :accessor container-type :initarg :containerType :initform nil)
    )
   )
@@ -214,51 +209,46 @@
 ;;;
 
 
-(defun find-inputs (target-id)
-  (remove-if-not #'(lambda (id) (eq 'input (flow-targetType (symbol-value id))))
-                 (remove-if-not #'(lambda (id) (string= target-id (flow-target (symbol-value id))))
-                                *flows*)))
+(defun find-input (object-id)
+  (remove-if-not #'(lambda (id) (eq 'information (arc-Type (symbol-value id))))
+                 (remove-if-not #'(lambda (id) (string= object-id (arc-target (symbol-value id))))
+                                *arcs*)))
 
-(defun find-outputs (source-id)
-  (remove-if-not #'(lambda (id) (eq 'output (flow-sourceType (symbol-value id))))
-                 (remove-if-not #'(lambda (id) (string= source-id (flow-source (symbol-value id))))
-                                *flows*)))
+(defun find-output (object-id)
+  (remove-if-not #'(lambda (id) (eq 'information (arc-Type (symbol-value id))))
+                 (remove-if-not #'(lambda (id) (string= object-id (arc-source (symbol-value id))))
+                                *arcs*)))
 
-(defun find-controls (target-id)
-  (remove-if-not #'(lambda (id) (eq 'control (flow-targetType (symbol-value id))))
-                 (remove-if-not #'(lambda (id) (string= target-id (flow-target (symbol-value id))))
-                                *flows*)))
+(defun find-output-for-container (object-id)
+  (car (remove-if-not #'(lambda (id) (eq 'hierarchization (arc-Type (symbol-value id))))
+                 (remove-if-not #'(lambda (id) (string= object-id (arc-source (symbol-value id))))
+                                *arcs*))))
 
-(defun find-mechanisms (target-id)
-  (remove-if-not #'(lambda (id) (eq 'mechanism (flow-targetType (symbol-value id))))
-                 (remove-if-not #'(lambda (id) (string= target-id (flow-target (symbol-value id))))
-                                *flows*)))
+(defun find-contraction (object-id)
+  (car (remove-if-not #'(lambda (id) (string= object-id (action-expansion (symbol-value id))))
+		 *actions*)))
 
-(defun find-parent (source-id)
-  (remove-if-not #'(lambda (id) (eq 'child (flow-sourceType (symbol-value id))))
-                 (remove-if-not #'(lambda (id) (string= source-id (flow-source (symbol-value id))))
-                                *flows*)))
+(defun find-expansion (object-id)
+  (car (mapcar #'(lambda (id) (arc-source (symbol-value id)))  
+    (remove-if-not #'(lambda (id) (eq 'hierarchization (arc-Type (symbol-value id))))
+                  (remove-if-not #'(lambda (id) (string= object-id (arc-target (symbol-value id))))
+                                  *arcs*)))))
 
-(defun find-child (target-id)
-  (remove-if-not #'(lambda (id) (eq 'parent (flow-targetType (symbol-value id))))
-                 (remove-if-not #'(lambda (id) (string= target-id (flow-target (symbol-value id))))
-                                *flows*)))
-
-(defun find-child-for-container (source-id)
-  (remove-if-not #'(lambda (id) (string= source-id (action-parent (symbol-value id))))
+(defun find-member (object-id)
+  (remove-if-not #'(lambda (id) (string= object-id (action-attribution (symbol-value id))))
 		 *actions*))
 
-(defun set-action-type (style-value)
-  (cond ((string= style-value '"ECDP") '"difine problem")
-	((string= style-value '"ECCD") '"collect data")
-	((string= style-value '"ECAI") '"analyze information")
-	((string= style-value '"ECEV") '"evaluate")
-	((string= style-value '"ECLS") '"list-up solutions")
-	((string= style-value '"ECDE") '"decide")
-	((string= style-value '"ECEX") '"execute")
+(defun find-action-type (style-value)
+  (cond ((string= style-value '"ECDP") '"DEFINE PROBLEM")
+  ((string= style-value '"ECCAI") '"COLLECT/ANALYZE INFO")
+	((string= style-value '"ECESI") '"EVALUATE/SELECT INFO")
+	((string= style-value '"ECGH") '"GENERATE HYPOTHESIS")
+	((string= style-value '"ECEX") '"EXECUTE")
+  ((string= style-value '"start") '"START")
+  ((string= style-value '"end") '"END")
 	(t nil)))
 
-(defun set-container-type (mxCell)
+(defun find-container-type (mxCell)
   (if (style-prop-exists? mxCell "containertype")
     (let ((style-value (second (style-prop-exists? mxCell "containertype"))))
 	 (apply #'(lambda (value)
@@ -267,7 +257,7 @@
 	       ((string= value '"whilecontainer") '"while container")))
 		style-value nil))))
 
-(defun make-flow-from-mxCell (mxCell)
+(defun make-arc-from-mxCell (mxCell)
   (when (or (style-prop-exists? mxCell "endArrow")
             (style-prop-exists? mxCell "edgeStyle"))
     (let ((id (drawio:mxCell-id mxCell))
@@ -292,85 +282,51 @@
                           (find-if #'(lambda (str) (drawio:starts-with-subseq "exitY" str))
                                    (drawio:split-string (drawio:mxCell-style mxCell) :item #\;))
                           :item #\=)))
-          (this-flow nil)
+          (this-arc nil)
           (id-sym nil)
           )
-      (setq this-flow
-            (make-instance 'flow :id id :layer layer :value value :source source :target target
-              :sourceType (cond ((string= exitX "1") 'output)
-                                ((string= exitY "1") 'child)
-                                ((or (null exitX) (null exitY)) 'output)
-                                (t nil))
-              :targetType (cond ((string= entryX "0") 'input)
-                                ((string= entryY "0") 'intention)
-				((and (string= entryX "1") (string= entryY "0")) 'rationale)
-				((and (string= entryX "1") (string= entryY "0.5")) 'annotation)
-                                ((and (string= entryY "1") (style-prop-exists? mxCell "edgeStyle"))
-                                 'parent)
-                                ((and (string= entryY "1") (style-prop-exists? mxCell "endArrow"))
-                                 'tool/knowledge
-				 )
-                                ((and (or (null entryX) (null entryY)) (style-prop-exists? mxCell "edgeStyle"))
-                                 'parent)
-                                ((and (or (null entryX) (null entryY)) (style-prop-exists? mxCell "endArrow"))
-                                 'input)
-                                ((error "Cant happen 2")))
-              ))
-      (when (null source)
-        (setf (flow-sourcepoint this-flow) (retlieve-sourcepoint mxCell)))
-      (when (null target)
-        (setf (flow-targetpoint this-flow) (retlieve-targetpoint mxCell)))
-      (setq id-sym (ensure-external (intern (flow-id this-flow) :pd3) :pd3))
-      (pushnew id-sym *flows*)
-      (set id-sym this-flow)
-      (setf (flow-id this-flow) id-sym)
+      (setq this-arc
+            (make-instance 'arc :id id :layer layer :value value :source source :target target
+			   :arcType (cond 
+                  ((and (not (string= entryX "1")) (string= entryY "0")) 'intention)
+      					  ((and (string= entryX "1") (string= entryY "0")) 'rationale)
+      					  ((and (string= entryX "1") (string= entryY "0.5")) 'annotation)
+                  ((and (string= entryY "1") (string= entryX "0")) 'hierarchization)
+                  ((and (string= entryY "1") (not (string= entryX "0"))) 'knowledge/tools)
+                  ((or (string= entryX "0") (string= entryY "1")) 'information)
+                  (t 'error))))
+      (setq id-sym (ensure-external (intern (arc-id this-arc) :pd3) :pd3))
+      (pushnew id-sym *arcs*)
+      (set id-sym this-arc)
+      (setf (arc-id this-arc) id-sym)
       id-sym)))
-
-(defun search-output-by-point (geometry)
-  (let ((x (read (make-string-input-stream (dio:mxGeometry-x geometry)))) ; read as real number
-        (y (read (make-string-input-stream (dio:mxGeometry-y geometry))))
-        (width (read (make-string-input-stream (dio:mxGeometry-width geometry))))
-        (height (read (make-string-input-stream (dio:mxGeometry-height geometry)))))
-;;;    (format t "~S ~S ~S ~S" x y width height)
-    (let ((output-x (+ x width))
-          (output-y (+ y (floor (/ height 2)))))
-      (find-if #'(lambda (aflow)
-                   (let((p (flow-sourcepoint (symbol-value aflow))))
-                     (and p (car p) (cdr p)
-                          (< (abs (- output-x (read (make-string-input-stream (car p))))) 2) ; two means small epsilon
-                          (< (abs (- output-y (read (make-string-input-stream (cdr p))))) 2))))
-               *flows*))))
 
 (defun make-action-from-mxCell (mxCell)
   (when (drawio-action-p mxCell)
+    ;; (format t "~A~%" (second (style-prop-exists? mxCell "pd3action")))
     (let ((id (dio:mxCell-id mxCell))
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
-	  (type (set-action-type (second (style-prop-exists? mxCell "pd3action"))))
+	        (action-type (find-action-type (second (style-prop-exists? mxCell "pd3action"))))
           (value (dio:mxCell-value mxCell))
-          (parent (dio:mxCell-parent mxCell)))
-      
-      (let ((inputs (find-inputs id))
-            (outputs (or (find-outputs id) (mklist (search-output-by-point (dio:mxCell-geometry mxCell)))))
-            (controls (find-controls id))
-            (mechanisms (find-mechanisms id))
-            (child (find-child id))
+          (attribution (dio:mxCell-parent mxCell)))
+      (let ((input (find-input id))
+            (output (find-output id))
+            (expansion (find-expansion id))
             (this-action nil)
             (id-sym nil))
-;;;        (format t "~%:id ~S :layer ~S :value ~S :inputs ~S :outputs ~S :controls ~S :mechanisms ~S"
-;;;          id layer value inputs outputs controls mechanisms)
         (setq this-action
-              (make-instance 'action :id id :layer layer :value value :inputs inputs :outputs outputs
-                :controls controls :mechanisms mechanisms :parent parent :child child :actionType type))
+              (make-instance 'action :id id :layer layer :value value :input input :output output
+               :attribution attribution :expansion expansion :actionType action-type))
         (setq id-sym (ensure-external (intern (action-id this-action) :pd3) :pd3))
         (pushnew id-sym *actions*)
         (set id-sym this-action)
         (setf (action-id this-action) id-sym)
-        (loop for output in outputs
-            do (cond ((null (flow-source (symbol-value output)))
-                      (setf (flow-source (symbol-value output)) id-sym))
-                     ((string= (string id-sym) (string (flow-source (symbol-value output)))))
-                     ((error "Output ~S of acion ~S mismatch to source of flow ~S." output id-sym output))))
+        (loop for output in output
+            do (cond ((null (arc-source (symbol-value output)))
+                      (setf (arc-source (symbol-value output)) id-sym))
+                     ((string= (string id-sym) (string (arc-source (symbol-value output)))))
+                     ((error "Output ~S of acion ~S mismatch to source of arc ~S." output id-sym output))))
         id-sym))))
 
 (defun make-container-from-mxCell (mxCell)
@@ -379,13 +335,14 @@
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
           (value (drawio:mxCell-value mxCell))
-	  (containerType (set-container-type mxCell)))
-      (let ((parent (find-parent id))
-            (child (find-child-for-container id))
+	  (containerType (find-container-type mxCell)))
+      (let ((output (find-output-for-container id))
+            (contraction (find-contraction id))
+            (member (find-member id))
             (id-sym nil))
         (let ((this-container
-               (make-instance 'container :id id :layer layer :value value 
-                 :parent parent :child child :containerType containerType)))
+               (make-instance 'container :id id :layer layer :value value :output output
+                 :contraction contraction :member member :containerType containerType)))
           (setq id-sym (ensure-external (intern (container-id this-container) :pd3) :pd3))
           (pushnew id-sym *containers*)
           (set id-sym this-container)
@@ -393,23 +350,28 @@
           id-sym)))))
 
 (defun read-drawio-file (file)
+  (setq *arcs* nil)
+  (setq *actions* nil)
+  (setq *containers* nil)
   (let* ((xml
           (line:with-open-file (stream file :external-format :utf-8)
             (drawio:read-xml-prolog stream)
             (drawio:read-mxfile stream)))
          (mxCells (drawio:query-path xml drawio:mxfile drawio:diagram drawio:mxGraphModel drawio:root))
-         (mxcells-nonflows (remove-if #'drawio-flow? mxCells))
-         (these-flows (loop for mxCell in mxCells
-                    if (make-flow-from-mxCell mxCell)
-                    collect it)))
-    (declare (ignore these-flows))
-    (let ((these-actions (loop for mxCell in mxcells-nonflows
+         (mxcells-nonarcs (remove-if #'drawio-arc? mxCells))
+         (these-arcs (loop for mxCell in mxCells
+                    if (make-arc-from-mxCell mxCell)
+			collect it))
+	 )
+    (declare (ignore these-arcs))
+    (let ((these-actions (loop for mxCell in mxcells-nonarcs
                        if (make-action-from-mxCell mxCell)
                        collect it)))
       (declare (ignore these-actions))
-      (let ((these-containers (loop for mxCell in mxcells-nonflows
+      (let ((these-containers (loop for mxCell in mxcells-nonarcs
                             if (make-container-from-mxCell mxCell)
                             collect it)))
         (declare (ignore these-containers)))))
-  (format t "~A~%" "COMPLETE!"))
+    (format t "~A~%" "COMPLETE!")
+  )
 
