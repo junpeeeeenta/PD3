@@ -1,8 +1,7 @@
+(in-package :cl-user)
 
-(in-package :cl)
-
-(cl:defpackage :pd3
-  (:use :common-lisp)
+(defpackage pd3
+  (:use #:cl #:common-lisp #:cl-ppcre)
   (:shadow #:some)
   (:export #:thing 
            #:arc #:arc-id #:arc-layer #:arc-value #:arc-source #:arc-target
@@ -10,8 +9,9 @@
            #:action #:container #:style-prop-exists?
            #:show #:it
            #:read-drawio-file
-           #:ensure-external
-   ))
+	         #:order-all-objects
+           #:ensure-external)
+  )
 
 (in-package :pd3)
 
@@ -53,6 +53,8 @@
 (defvar *arcs* nil)
 (defvar *actions* nil)
 (defvar *containers* nil)
+;(defvar *all-objects* nil)
+(defvar *all-objects-ordered* nil)
 
 ;;;
 ;;; command style Human User Interface for PD3
@@ -246,6 +248,7 @@
 	((string= style-value '"ECEX") '"EXECUTE")
   ((string= style-value '"start") '"START")
   ((string= style-value '"end") '"END")
+  (t nil)))
 
 
 (defun find-container-type (mxCell)
@@ -257,13 +260,38 @@
 	       ((string= value '"whilecontainer") '"while container")))
 		style-value nil))))
 
-(defun make-arc-from-mxCell (mxCell)
+(defun find-arc-value (mxCell mxCells-nonarcs)
+  (let ((arc-value  (string (drawio:mxCell-value mxCell))))
+	 (apply #'(lambda (value)
+		    (cond ((or (string= value '"") (string= value '"NIL"))
+			   (find-edgeLabel (dio:mxCell-id mxCell) mxCells-nonarcs))
+			  (t arc-value)))
+		arc-value nil)))
+
+(defun find-edgeLabel (object-id mxCells-nonarcs)
+  (remove-if-not #'(lambda (mxCell-nonarc) (eq mxCell-nonarc NIL)) mxCells-nonarcs)
+  (let ((edgeLabels (remove-if-not #'(lambda (mxCell-nonarc)
+  		       (string= object-id (dio:mxCell-parent mxCell-nonarc)))
+				   mxCells-nonarcs)))
+    (if (eq edgeLabels NIL)
+	NIL
+	(dio:mxCell-value (car edgeLabels)))))
+
+(defun replace-mxCell-value (value)
+  (let ((strs (list '"&lt;" '"span" '"&gt;" '"/" '"br")))
+    (dolist (str strs)
+	 (setq value (cl-ppcre:regex-replace-all str value ""))
+	 ))
+  value)
+
+
+(defun make-arc-from-mxCell (mxCell mxCells-nonarcs)
   (when (or (style-prop-exists? mxCell "endArrow")
             (style-prop-exists? mxCell "edgeStyle"))
     (let ((id (drawio:mxCell-id mxCell))
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
-          (value (drawio:mxCell-value mxCell))
+          (value (replace-mxCell-value (find-arc-value mxCell mxCells-nonarcs)))
           (source (drawio:mxCell-source mxCell))
           (target (drawio:mxCell-target mxCell))
           (entryX (second (drawio:split-string
@@ -285,6 +313,7 @@
           (this-arc nil)
           (id-sym nil)
           )
+     ; (format t "~A~%" value)
       (setq this-arc
             (make-instance 'arc :id id :layer layer :value value :source source :target target
 			   :arcType (cond 
@@ -308,7 +337,7 @@
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
 	        (action-type (find-action-type (second (style-prop-exists? mxCell "pd3action"))))
-          (value (dio:mxCell-value mxCell))
+          (value  (replace-mxCell-value (dio:mxCell-value mxCell)))
           (attribution (dio:mxCell-parent mxCell)))
       (let ((input (find-input id))
             (output (find-output id))
@@ -334,7 +363,7 @@
     (let ((id (drawio:mxCell-id mxCell))
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
-          (value (drawio:mxCell-value mxCell))
+          (value (replace-mxCell-value (drawio:mxCell-value mxCell)))
 	  (containerType (find-container-type mxCell)))
       (let ((output (find-output-for-container id))
             (contraction (find-contraction id))
@@ -358,20 +387,29 @@
             (drawio:read-xml-prolog stream)
             (drawio:read-mxfile stream)))
          (mxCells (drawio:query-path xml drawio:mxfile drawio:diagram drawio:mxGraphModel drawio:root))
-         (mxcells-nonarcs (remove-if #'drawio-arc? mxCells))
+         (mxCells-nonarcs (remove-if #'drawio-arc? mxCells))
          (these-arcs (loop for mxCell in mxCells
-                    if (make-arc-from-mxCell mxCell)
+                    if (make-arc-from-mxCell mxCell mxCells-nonarcs)
 			collect it))
 	 )
     (declare (ignore these-arcs))
-    (let ((these-actions (loop for mxCell in mxcells-nonarcs
+    (let ((mxCells-nonarcs-nonactions (remove-if #'drawio-action-p mxCells-nonarcs))
+	  (these-actions (loop for mxCell in mxCells-nonarcs
                        if (make-action-from-mxCell mxCell)
                        collect it)))
       (declare (ignore these-actions))
-      (let ((these-containers (loop for mxCell in mxcells-nonarcs
+      (let ((these-containers (loop for mxCell in mxCells-nonarcs-nonactions
                             if (make-container-from-mxCell mxCell)
-                            collect it)))
-        (declare (ignore these-containers)))))
+				 collect it)))	
+        (declare (ignore these-containers))
+	)))
     (format t "~A~%" "COMPLETE!")
   )
 
+(defun order-all-objects (actions arcs containers)
+  (let ((all-objects '()))
+    (dolist (container containers) (setq all-objects (cons container all-objects)))
+    (dolist (arc arcs) (setq all-objects (cons arc all-objects)))
+    (dolist (action actions) (setq all-objects (cons action all-objects)))
+    (format t "~A" all-objects)
+  ))

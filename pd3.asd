@@ -14,7 +14,7 @@
   :version "0.0.1"
   :licence "MIT"
   :description "reader and chercker for pd3 file made by Drawio"
-  :depends-on ("drawio" "xmlreader" "line-reader")
+  :depends-on ("drawio" "xmlreader" "line-reader" "cl-ppcre")
   :components
   ((:file "pd3")
    (:file "pd3inter"))
