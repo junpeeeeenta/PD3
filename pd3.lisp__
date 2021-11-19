@@ -10,8 +10,7 @@
            #:show #:it
            #:read-drawio-file
 	         #:order-all-objects
-           #:ensure-external
-           #:show-arctype-nil)
+           #:ensure-external)
   )
 
 (in-package :pd3)
@@ -213,17 +212,17 @@
 
 
 (defun find-input (object-id)
-  (remove-if-not #'(lambda (id) (string= '"information" (arc-Type (symbol-value id))))
+  (remove-if-not #'(lambda (id) (eq 'information (arc-Type (symbol-value id))))
                  (remove-if-not #'(lambda (id) (string= object-id (arc-target (symbol-value id))))
                                 *arcs*)))
 
 (defun find-output (object-id)
-  (remove-if-not #'(lambda (id) (string= '"information" (arc-Type (symbol-value id))))
+  (remove-if-not #'(lambda (id) (eq 'information (arc-Type (symbol-value id))))
                  (remove-if-not #'(lambda (id) (string= object-id (arc-source (symbol-value id))))
                                 *arcs*)))
 
 (defun find-output-for-container (object-id)
-  (car (remove-if-not #'(lambda (id) (string= '"hierarchization" (arc-Type (symbol-value id))))
+  (car (remove-if-not #'(lambda (id) (eq 'hierarchization (arc-Type (symbol-value id))))
                  (remove-if-not #'(lambda (id) (string= object-id (arc-source (symbol-value id))))
                                 *arcs*))))
 
@@ -242,13 +241,13 @@
 		 *actions*))
 
 (defun find-action-type (style-value)
-  (cond ((string= style-value '"ECDP") '"define problem")
-  ((string= style-value '"ECCAI") '"collect/analyze info")
-	((string= style-value '"ECESI") '"evaluate/select info")
-	((string= style-value '"ECGH") '"generate hypothesis")
-	((string= style-value '"ECEX") '"execute")
-  ((string= style-value '"start") '"start")
-  ((string= style-value '"end") '"end")
+  (cond ((string= style-value '"ECDP") '"DEFINE PROBLEM")
+  ((string= style-value '"ECCAI") '"COLLECT/ANALYZE INFO")
+	((string= style-value '"ECESI") '"EVALUATE/SELECT INFO")
+	((string= style-value '"ECGH") '"GENERATE HYPOTHESIS")
+	((string= style-value '"ECEX") '"EXECUTE")
+  ((string= style-value '"start") '"START")
+  ((string= style-value '"end") '"END")
   (t nil)))
 
 
@@ -279,7 +278,7 @@
 	(dio:mxCell-value (car edgeLabels)))))
 
 (defun replace-mxCell-value (value)
-  (let ((strs (list '"&lt;" '"span" '"&gt;" '"/" '"br" '"style=&quot;" '"font-size: 14px;" '"font-size:14px" '"&quot;" '" ")))
+  (let ((strs (list '"&lt;" '"span" '"&gt;" '"/" '"br")))
     (dolist (str strs)
 	 (setq value (cl-ppcre:regex-replace-all str value ""))
 	 ))
@@ -318,13 +317,13 @@
       (setq this-arc
             (make-instance 'arc :id id :layer layer :value value :source source :target target
 			   :arcType (cond 
-                  ((and (not (string= entryX "1")) (string= entryY "0")) '"intention")
-      					  ((and (string= entryX "1") (string= entryY "0")) '"rationale")
-      					  ((and (string= entryX "1") (string= entryY "0.5")) '"annotation")
-                  ((and (string= entryY "1") (string= entryX "0")) '"hierarchization")
-                  ((and (string= entryY "1") (not (string= entryX "0"))) '"knowledge/tools")
-                  ((or (string= entryX "0") (string= entryY "1")) '"information")
-                  (t 'NIL))))
+                  ((and (not (string= entryX "1")) (string= entryY "0")) 'intention)
+      					  ((and (string= entryX "1") (string= entryY "0")) 'rationale)
+      					  ((and (string= entryX "1") (string= entryY "0.5")) 'annotation)
+                  ((and (string= entryY "1") (string= entryX "0")) 'hierarchization)
+                  ((and (string= entryY "1") (not (string= entryX "0"))) 'knowledge/tools)
+                  ((or (string= entryX "0") (string= entryY "1")) 'information)
+                  (t NIL))))
       (setq id-sym (ensure-external (intern (arc-id this-arc) :pd3) :pd3))
       (pushnew id-sym *arcs*)
       (set id-sym this-arc)
@@ -408,6 +407,8 @@
   (format t "~A~%" "COMPLETE!")
 )
 
+
+
 (defun set-arc-type ()
   (let ((arcs *arcs*))
     (let ((arcs-nontype (remove-if-not #'(lambda (arc) (eq (arc-type (symbol-value arc)) NIL)) arcs))
@@ -425,23 +426,33 @@
 	  (dolist (container containers)
             (when (string= source-id (container-id (symbol-value container))) (return (setq source-type 'container))))
             (cond
-	      ((and (equalp source-type 'action) (equalp target-type 'action)) (setf (slot-value (symbol-value (find-arc arc-nontype-id)) 'arcType) '"information"))
-	      ((and (equalp source-type 'container) (equalp target-type 'action)) (setf (slot-value (symbol-value (find-arc arc-nontype-id)) 'arcType) '"hierarchization")))
+	      ((and (equalp source-type 'action) (equalp target-type 'action)) (setf (slot-value (symbol-value (find-arc arc-nontype-id)) 'arcType) 'information))
+	      ((and (equalp source-type 'container) (equalp target-type 'action)) (setf (slot-value (symbol-value (find-arc arc-nontype-id)) 'arcType) 'hierarchization)))
 	    )))))
 
-(defun find-arc (id)
-  (let ((arcs *arcs*))
-    (car (remove-if-not #'(lambda (arc) (string= id (arc-id (symbol-value arc)))) arcs))))
+(defun find-edgeLabel (object-id mxCells-nonarcs)
+(remove-if-not #'(lambda (mxCell-nonarc) (eq mxCell-nonarc NIL)) mxCells-nonarcs)
+(let ((edgeLabels (remove-if-not #'(lambda (mxCell-nonarc)
+            (string= object-id (dio:mxCell-parent mxCell-nonarc)))
+          mxCells-nonarcs)))
+  (if (eq edgeLabels NIL))))
 
-(defun show-arctype-nil ()
-  (let ((arcs *arcs*))
-    (show (remove-if-not #'(lambda (arc) (string= nil (arc-type (symbol-value arc)))) arcs))))
-    
+
 
 (defun order-all-objects (actions arcs containers)
   (let ((all-objects '()))
     (dolist (container containers) (setq all-objects (cons container all-objects)))
     (dolist (arc arcs) (setq all-objects (cons arc all-objects)))
     (dolist (action actions) (setq all-objects (cons action all-objects)))
-    (format t "~A" all-objects)
-  ))
+    (dolist (object all-objects) (format t "~A" (eq (type-of (symbol-value object)) 'action)))
+    (format t "~A" (type-of all-objects))
+    ))
+
+(defun find-arc (id)
+  (let ((arcs *arcs*))
+    (car (remove-if-not #'(lambda (arc) (string= id (arc-id (symbol-value arc)))) arcs))))
+
+(defun find-arctype-nil ()
+  (let ((arcs *arcs*))
+    (remove-if-not #'(lambda (arc) (string= nil (arc-type (symbol-value arc)))) arcs)))
+    
