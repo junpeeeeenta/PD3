@@ -54,8 +54,8 @@
 (defvar *arcs* nil)
 (defvar *actions* nil)
 (defvar *containers* nil)
-;(defvar *all-objects* nil)
-(defvar *all-objects-ordered* nil)
+(defvar *objects* nil)
+(defvar *ordered-objects* nil)
 (defvar *mxCell-base-id* nil)
 
 ;;;
@@ -408,6 +408,7 @@
         (declare (ignore these-containers))
 	)))
   (set-arc-type)
+  (order-all-objects)
   (format t "~A~%" "COMPLETE!")
 )
 
@@ -432,6 +433,41 @@
 	      ((and (equalp source-type 'container) (equalp target-type 'action)) (setf (slot-value (symbol-value (find-arc arc-nontype-id)) 'arcType) '"hierarchization")))
 	    )))))
 
+(defun order-all-objects ()
+  (let ((actions *actions*)
+	(arcs *arcs*)
+	(containers *containers*))
+    (dolist (container containers) (setq *objects* (cons container *objects*)))
+    (dolist (arc arcs) (setq *objects* (cons arc *objects*)))
+    (dolist (action actions) (setq *objects* (cons action *objects*)))
+					;(format t "~A~%" (find-start-box))
+    (%order-all-objects (find-start-box) '())
+    
+    ))
+
+(defun %order-all-objects (object ordered-objects)
+  (setq ordered-objects (append ordered-objects (list object)))
+  (format t "~A~%" ordered-objects)
+  (cond ((string= (type-of (symbol-value object)) 'action)
+	 (format t "~A~%" '"ACTION")
+	 (if (string= nil (action-attribution (symbol-value object)))
+	     (%order-all-objects (find-arc (action-output (symbol-value object))) ordered-objects)
+	     (%order-all-objects (find-container (action-attribution (symbol-value object))) ordered-objects)
+	     )
+	 )
+	)
+)
+
+
+(defun find-action (id)
+  (format t "~A~%" id)
+    (let ((actions *actions*))
+      (car (remove-if-not #'(lambda (action) (string= id (action-id (symbol-value action)))) actions))))
+
+(defun find-container (id)
+    (let ((containers *containers*))
+      (car (remove-if-not #'(lambda (container) (string= id (container-id (symbol-value container)))) containers))))
+
 (defun find-arc (id)
   (let ((arcs *arcs*))
     (car (remove-if-not #'(lambda (arc) (string= id (arc-id (symbol-value arc)))) arcs))))
@@ -439,24 +475,10 @@
 (defun show-arctype-nil ()
   (let ((arcs *arcs*))
     (show (remove-if-not #'(lambda (arc) (string= nil (arc-type (symbol-value arc)))) arcs))))
-    
-
-(defun order-all-objects ()
-  (let ((all-objects '())
-	(actions *actions*)
-	(arcs *arcs*)
-	(containers *containers*))
-    (dolist (container containers) (setq all-objects (cons container all-objects)))
-    (dolist (arc arcs) (setq all-objects (cons arc all-objects)))
-    (dolist (action actions) (setq all-objects (cons action all-objects)))
-    ;(format t "~A" all-objects)
-    (format t "~A~%" (find-start-box))
-  ))
 
 (defun find-start-box ()
   (let ((actions *actions*))
-    (car (remove-if-not #'(lambda (action) (eq NIL (action-attribution (symbol-value action))))
-    ;; (remove-if-not #'(lambda (action) (string= '"start" (action-type (symbol-value action)))) actions)
-    actions))
+    (car (remove-if-not #'(lambda (action) (eq nil (action-attribution (symbol-value action)))) (remove-if-not #'(lambda (action) (string= '"topic" (action-layer (symbol-value action)))) (remove-if-not #'(lambda (action) (string= '"start" (action-type (symbol-value action)))) actions)
+    )))
     )
   )

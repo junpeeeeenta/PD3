@@ -9,7 +9,7 @@
            #:action #:container #:style-prop-exists?
            #:show #:it
            #:read-drawio-file
-	         #:order-all-objects
+	   #:order-all-objects
            #:ensure-external
            #:show-arctype-nil)
   )
@@ -54,9 +54,10 @@
 (defvar *arcs* nil)
 (defvar *actions* nil)
 (defvar *containers* nil)
-;(defvar *all-objects* nil)
-(defvar *all-objects-ordered* nil)
+(defvar *objects* nil)
+(defvar *ordered-objects* nil)
 (defvar *mxCell-base-id* nil)
+
 ;;;
 ;;; command style Human User Interface for PD3
 ;;;
@@ -279,7 +280,7 @@
 	(dio:mxCell-value (car edgeLabels)))))
 
 (defun replace-mxCell-value (value)
-  (let ((strs (list '"&lt;" '"span" '"&gt;" '"/" '"br" '"style=&quot;" '"font-size: 14px;" '"font-size:14px" '"&quot;" '" ")))
+  (let ((strs (list '"&lt;" '"span" '"&gt;" '"/" '"br" '"style=&quot;" '"font-size: 14px;" '"font-size:14px" '"font-size: 16px;" '"font-size:16px" '"&quot;" '" ")))
     (dolist (str strs)
 	 (setq value (cl-ppcre:regex-replace-all str value ""))
 	 ))
@@ -338,10 +339,9 @@
           (layer (second (or (style-prop-exists? mxCell "layer")
                              (style-prop-exists? mxCell "pd3layer"))))
 	        (action-type (find-action-type (second (style-prop-exists? mxCell "pd3action"))))
-          (value  (replace-mxCell-value (dio:mxCell-value mxCell)))
-          (attribution (if (eq *mxCell-base-id* (dio:mxCell-parent mxCell))
-                            nil
-                            dio:mxCell-parent mxCell)))
+          (value  (replace-mxCell-value (drawio:mxCell-value mxCell)))
+          (attribution (unless (string= *mxCell-base-id* (dio:mxCell-parent mxCell))
+			 (dio:mxCell-parent mxCell))))
       (let ((input (find-input id))
             (output (find-output id))
             (expansion (find-expansion id))
@@ -443,21 +443,46 @@
     
 
 (defun order-all-objects ()
-  (let ((all-objects '())
-	(actions *actions*)
+  (let ((actions *actions*)
 	(arcs *arcs*)
 	(containers *containers*))
-    (dolist (container containers) (setq all-objects (cons container all-objects)))
-    (dolist (arc arcs) (setq all-objects (cons arc all-objects)))
-    (dolist (action actions) (setq all-objects (cons action all-objects)))
-    ;(format t "~A" all-objects)
-    (format t "~A~%" (find-start-box))
-  ))
+    (dolist (container containers) (setq *objects* (cons container *objects*)))
+    (dolist (arc arcs) (setq *objects* (cons arc *objects*)))
+    (dolist (action actions) (setq *objects* (cons action *objects*)))
+					;(format t "~A~%" (find-start-box))
+    (%order-all-objects (find-start-box) '())
+    
+    ))
+
+(defun %order-all-objects (object ordered-objects)
+  (setq ordered-objects (append ordered-objects (list object)))
+  (format t "~A~%" ordered-objects)
+  (cond ((string= (type-of (symbol-value object)) 'action)
+	 (format t "~A~%" '"ACTION")
+	 (if (string= nil (action-attribution (symbol-value object)))
+	     (%order-all-objects (find-arc (action-output (symbol-value object))) ordered-objects)
+	     (%order-all-objects (find-container (action-attribution (symbol-value object))) ordered-objects)
+	     )
+	 )
+	)
+)
+
+(defun find-action (id)
+    (let ((actions *actions*))
+      (car (remove-if-not #'(lambda (action) (eq id (action-id (symbol-value action)))) actions))))
+
+(defun find-arc (id)
+    (let ((arcs *arcs*))
+      (car (remove-if-not #'(lambda (arc) (equalp id (arc-id (symbol-value arc)))) arcs))))
+
+(defun find-container (id)
+    (let ((containers *containers*))
+      (car (remove-if-not #'(lambda (container) (eq id (container-id (symbol-value container)))) containers))))
+  
 
 (defun find-start-box ()
   (let ((actions *actions*))
-    (car (remove-if-not #'(lambda (action) (eq NIL (action-attribution (symbol-value action))))
-    ;; (remove-if-not #'(lambda (action) (string= '"start" (action-type (symbol-value action)))) actions)
-    actions))
+    (car (remove-if-not #'(lambda (action) (eq nil (action-attribution (symbol-value action)))) (remove-if-not #'(lambda (action) (string= '"topic" (action-layer (symbol-value action)))) (remove-if-not #'(lambda (action) (string= '"start" (action-type (symbol-value action)))) actions)
+    )))
     )
   )
