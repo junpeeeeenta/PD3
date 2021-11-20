@@ -9,7 +9,7 @@
            #:action #:container #:style-prop-exists?
            #:show #:it
            #:read-drawio-file
-	   #:order-all-objects
+	         #:order-all-objects
            #:ensure-external
            #:show-arctype-nil)
   )
@@ -57,7 +57,6 @@
 ;(defvar *all-objects* nil)
 (defvar *all-objects-ordered* nil)
 (defvar *mxCell-base-id* nil)
-
 ;;;
 ;;; command style Human User Interface for PD3
 ;;;
@@ -340,7 +339,8 @@
                              (style-prop-exists? mxCell "pd3layer"))))
 	        (action-type (find-action-type (second (style-prop-exists? mxCell "pd3action"))))
           (value  (replace-mxCell-value (dio:mxCell-value mxCell)))
-          (attribution (when (eq *mxCell-base-id* (dio:mxCell-parent mxCell))
+          (attribution (if (eq *mxCell-base-id* (dio:mxCell-parent mxCell))
+                            nil
                             dio:mxCell-parent mxCell)))
       (let ((input (find-input id))
             (output (find-output id))
@@ -408,6 +408,7 @@
         (declare (ignore these-containers))
 	)))
   (set-arc-type)
+  (order-all-objects)
   (format t "~A~%" "COMPLETE!")
 )
 
